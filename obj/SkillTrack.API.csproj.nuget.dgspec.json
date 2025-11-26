@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AZAJ SHAIKH\\OneDrive\\Desktop\\Project C#\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj": {}
+    "C:\\Projects\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AZAJ SHAIKH\\OneDrive\\Desktop\\Project C#\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj": {
+    "C:\\Projects\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AZAJ SHAIKH\\OneDrive\\Desktop\\Project C#\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj",
+        "projectUniqueName": "C:\\Projects\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj",
         "projectName": "SkillTrack.API",
-        "projectPath": "C:\\Users\\AZAJ SHAIKH\\OneDrive\\Desktop\\Project C#\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj",
+        "projectPath": "C:\\Projects\\SkillTrack\\SkillTrack.API\\SkillTrack.API.csproj",
         "packagesPath": "C:\\Users\\AZAJ SHAIKH\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AZAJ SHAIKH\\OneDrive\\Desktop\\Project C#\\SkillTrack\\SkillTrack.API\\obj\\",
+        "outputPath": "C:\\Projects\\SkillTrack\\SkillTrack.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,17 +69,21 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.0.2, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -90,6 +94,10 @@
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

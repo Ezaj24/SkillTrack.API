@@ -17,8 +17,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // DbContext registration
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+
 
 // Repositories
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();

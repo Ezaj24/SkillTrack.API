@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkillTrack.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2049b0b4a10f15c9c88bf9d7045c5e649494176b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74045de560073d8445963bcb57707a8f2494297b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkillTrack.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkillTrack.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,7 +12,6 @@ using SkillTrack.API.Services.Interfaces;
 using System.Security.Claims;
 using System.Text;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // DbContext registration
@@ -20,28 +19,19 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-
-
 // Repositories
 builder.Services.AddScoped<ISkillRepository, SkillRepository>();
+builder.Services.AddScoped<IGoalRepository, GoalRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Services
 builder.Services.AddScoped<ISkillService, SkillService>();
-
-builder.Services.AddScoped<IGoalRepository, GoalRepository>();
 builder.Services.AddScoped<IGoalService, GoalService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 
-
-
-
-
 // Controllers & Swagger
 builder.Services.AddControllers();
-builder.Services.AddControllers();
-
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<Program>();
 
@@ -74,8 +64,7 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-
-
+// JWT Auth
 var jwtKey = builder.Configuration["Jwt:Key"];
 
 builder.Services.AddAuthentication(options =>
@@ -92,29 +81,25 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
         ClockSkew = TimeSpan.Zero,
-
-        // This makes sure custom claim types work
         NameClaimType = ClaimTypes.Name,
         RoleClaimType = ClaimTypes.Role
     };
 });
 
-
+// Render port binding (REQUIRED)
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 var app = builder.Build();
 
-// Swagger in development
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Swagger MUST run in production on Render
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
 app.UseMiddleware<ExceptionMiddleware>();
 
-// ⭐ Correct order
 app.UseAuthentication();
 app.UseAuthorization();
 

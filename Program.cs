@@ -92,6 +92,16 @@ builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 var app = builder.Build();
 
+
+// Apply pending migrations automatically on startup (for Render/PostgreSQL)
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+}
+
+
+
 // Swagger MUST run in production on Render
 app.UseSwagger();
 app.UseSwaggerUI();

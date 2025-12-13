@@ -3,3 +3,5 @@
 
 # SkillTrack.Backend.
 # SkillTrack.Frontend.
+
+# SkillTrack.Projects.
